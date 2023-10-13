@@ -14,7 +14,7 @@ if (pedro.idade >= 18){
 
 
 let nota1 = 2; 
-let nota2 = 6;
+let nota2 = 5
 let media =(nota1 + nota2)/2;
 
 if(media >= 6 ){
