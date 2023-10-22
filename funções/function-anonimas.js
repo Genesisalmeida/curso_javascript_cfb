@@ -22,6 +22,12 @@ console.log(nome(name))
 
 // function anônima contrutor//
 
-
 let f = new Function('v1', 'v2', 'return v1+v2')
-console.log(f(10,10))
+console.log(f(10,10));
+
+
+// arroy funções//
+
+(res)=>{
+    return res
+}
