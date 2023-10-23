@@ -21,3 +21,4 @@ let somaTotalElement = document.getElementById("rs");
 }
 // Exibe a soma formatada, neste caso, com 2 casas decimais
 res(soma)
+
