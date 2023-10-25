@@ -35,6 +35,12 @@
             border: 1px solid black;
             padding: 10px;
         }
+        input {
+            border: 1px solid white;
+            width: 8vw;
+            text-align: center;
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -57,9 +63,9 @@
             <tr>
                 <th scope="rowgroup" rowspan="4">Exatas</th>
                 <td>Matemática</td>
-                <td class="nota">7.5</td>
-                <td class="nota">8.5</td>
-                <td class="nota">0.0</td>
+                <td class="nota" ><input type="text"  placeholder="digite sua nota"></td>
+                <td class="nota"><input type="text" class="valor" placeholder="Digite sua nota"></td>
+                <td class="medianum">0.0</td>
             </tr>
             <tr>
                 <td>Física</td>
@@ -81,7 +87,7 @@
             </tr>
             <tr>
                 <th scope="row" colspan="4" class="media">Média de Exatas</th>
-                <td class="medianum">0.0</td>
+                <td class="">0.0</td>
             </tr>
             <tr>
                 <th scope="rowgroup" rowspan="2">Humanas</th>
@@ -98,10 +104,11 @@
             </tr>
             <tr>
                 <th scope="row" colspan="4" class="media">Média de Humanas</th>
-                <td  class="medianum" >1</td>
+                <td  class="medianum" ></td>
             </tr>
         </tbody>
-    </table>
+    </table> <br>
+    <button>Resultado</button>
 <script src="tabela.js"></script>
 </body>
 </html>
