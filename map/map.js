@@ -121,16 +121,34 @@
 //  console.log(result)
   
   
-function filtrarNumerosPares(array) {
-   let calcu = array.filter((pares)=>{
-        if(pares%2==0){
-        return `par :${pares}`;
+// function filtrarNumerosPares(array) {
+//    let calcu = array.filter((pares)=>{
+//         if(pares%2==0){
+//         return `par :${pares}`;
         
-        }
-    })
-    return calcu
-  }
+//         }
+//     })
+//     return calcu
+//   }
  
-  const numeros = [1, 2, 3, 4, 5, 6];
-  const numerosPares = filtrarNumerosPares(numeros);
-  console.log(numerosPares)
+// const numeros = [1, 2, 3, 4, 5, 6];
+//   const numerosPares = filtrarNumerosPares(numeros);
+//   console.log(numerosPares);
+
+
+  // Numero primos//
+
+  // const numeros =[1,2,3,4,5,6,7,8,9,10,11];
+
+  // let numeroprimo=(n)=>{
+    
+  //   for(let i of n){
+  //       if(i%2==0){
+  //         continue;
+  //          }
+  //      console.log(`primo:${i}`) 
+  //     }
+  //   }
+    
+  // console.log(numeroprimo(numeros))
+ 
