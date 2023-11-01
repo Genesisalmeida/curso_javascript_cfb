@@ -11,7 +11,7 @@ const contVogais = (array)=>{
     }
      
     }
-     return cont  
+     return `quantidade string é ${cont}`  
     
 };
 
@@ -40,8 +40,12 @@ console.log(result)
 
 //exercico ordenção array//
 let orden = (array1)=>{
-    return array1.sort((a, b) => a - b);
+    return array1.sort((a, b) => a - b); //O que é Sort em JavaScript O método sort() ordena os elementos do próprio array e retorna o array
 }
 
 let n2 = [1,2,5,8,6,10,3,9,4]
 console.log(orden(n2));
+
+
+
+
