@@ -29,5 +29,4 @@ buttom2.addEventListener('click', ()=>{
         caixa1.appendChild(e)
     })
 
-})
-
+});

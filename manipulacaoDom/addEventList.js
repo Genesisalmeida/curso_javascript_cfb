@@ -12,5 +12,5 @@ div.addEventListener('click', (e)=>{// evento de click..
     console.log(e.target) // auqi estamos capturando o event
     div.innerHTML='Amém';
     div.style.color='blue';
-})
+});
 
