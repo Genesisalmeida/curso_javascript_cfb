@@ -11,8 +11,8 @@ let valor1;
 let valor2;
 
 table.map((e)=>{
-  e.addEventListener('click', (ele)=>{
-    ele.stopPropagation()    // aplicamos o stopPropagation para parar o evento ao clicar no elemento table isso resolveu o prblema de ficar  aparecendo NaN ao selecionar o campo para passar os valores/
+  e.addEventListener('click', (evt)=>{
+    evt.stopPropagation()    // aplicamos o stopPropagation para parar o evento ao clicar no elemento table isso resolveu o prblema de ficar  aparecendo NaN ao selecionar o campo para passar os valores/
   })
 })
 clear.addEventListener('click',()=>{
