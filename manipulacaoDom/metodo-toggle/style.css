@@ -8,7 +8,7 @@ body{
     flex-direction: row;
 }
 .selecionado{
-    background-color: crimson !important;
+    background-color:  #6495ed !important;
     
 }
 .caixa1{
@@ -32,9 +32,6 @@ body{
     padding: 20px;
     margin-top: 20px;
     border: 1px solid #000000;
-}
-.liguagem:hover{
-    background-color: #6495ed;
 }
 .but{
     display: flex;
