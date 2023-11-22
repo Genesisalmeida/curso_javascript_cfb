@@ -11,7 +11,7 @@ body{
     background-color:  #6495ed !important;
     
 }
-.caixa1{
+.caixa{
     display: flex;
     overflow: auto;
     background-color: #00ffff;
