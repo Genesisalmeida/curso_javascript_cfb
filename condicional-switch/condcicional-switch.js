@@ -20,7 +20,7 @@ switch(fardamento){
 }
 
 
-var foo = 5;
+/*var foo = 7;
 var output = "Output: ";
 switch (foo) {
   case 10:
@@ -44,6 +44,27 @@ switch (foo) {
     console.log("Favor escolher um número de 0 à 6!");
 }
 
+
+
+
+let menu =Number(prompt('Escolha as opções de 1 a 3')) 
+let e = 'Bem  vindo';
+let c = 'Jesus te ama';
+let b = 'Parabéns pra voçê';
+
+switch(menu){
+  case 1:
+    alert(`opção escolhida foi: ${e}`);
+    break;
+  case 2:
+    alert(`opção escolhida foi: ${c}`);
+    break;
+  case 3 :
+    alert(`opção escolhida foi: ${b}`);
+    break;  
+  default:
+    alert('Escolha uma opção valída');
+}*/
 
 
 

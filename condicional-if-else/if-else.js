@@ -20,7 +20,7 @@ let media =(nota1 + nota2)/2;
 if(media >= 6 ){
     console.log('voçe esta aprovado' +':média', media);
     
-}else if(media == 5 ){
+}else if(media <= 5 ){
     console.log('voçe esta de recuperção' + ':média' , media)
 }else{
     console.log('voçe esta reprovado')

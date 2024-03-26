@@ -13,3 +13,4 @@ if(!(n1 > n3) && !(n2 < 25)){
 } else{
     console.log(false);
 }
+
