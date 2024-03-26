@@ -1,7 +1,9 @@
-// let n1 = 10;
-// let n2 = 11;
-// let res = n1 & n2; & equivalencia'&'
-// 
+ //let n3 = 15;
+ //let n2 = 15;
+//let res1 = n3 & n2; //& equivalencia'&'retorna verdadeiro quando 1 e1 '
+//console.log(res1)
+    
+
 
 // let n1 = 10;
 // let n2 = 11;
