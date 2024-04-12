@@ -1,14 +1,15 @@
 //Aprendendo o getElementByid//
 
-const h1 = document.getElementById('#h1');     
+const h1 =document.getElementById('#h1');    
+
 
 
 ////Aprendendo o getElementByTagName//
 
-let  div = document.getElementsByTagName('div'); // reto
+let  div = [...document.getElementsByTagName('div')]; // spred diretamente nos elementos
 
-div = [...div]; // spred 
-console.log(div);
+// div = [...div]; // spred 
+// console.log(div);
 
 let pecorre = div.map((e)=>{
     e.innerHTML='Obrigado por tudo meu Deus';

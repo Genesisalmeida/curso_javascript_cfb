@@ -8,7 +8,7 @@ function* formulario(){
   return `Meu nome completo é ${nome}  e tenho ${idade} anos.`;
 }
 let ret = formulario(); // Aqui estamos chamando o interador da função,retorna o intereito
-console.log(ret.next().value)// Aqui estamos exercutando o primeiro yield
+console.log(ret.next().value)// Aqui estamos exercutando o primeiro yield     
 console.log(ret.next('Genesis Souza Almeida').value);
 console.log(ret.next(18).value);
 
@@ -31,3 +31,5 @@ for(let i= 0; i<=10; i++){
 //console.log(res.next().value);
 //console.log(res.next().value);
 //console.log(res.next().value); // esse console retorna idefinido  porque o yield não foi declarado//
+
+

@@ -1,13 +1,13 @@
 // // //  Método Map//  
 // // // Map  serve para pecorrer um array por completo , ela visita cada inte do array
 
-// // //No map(n,i) temos os seguintes parâmetros(map(n,i)) onde (n )é o elemento do array , e (i) é o indice
-// // let cores = ['azul','branco', 'verde'];
+//No map(n,i) temos os seguintes parâmetros(map(n,i)) onde (n )é o elemento do array , e (i) é o indice
+ let cores = ['azul','branco', 'verde'];
 
-// // cores.map((cor,i)=>{
-// //      console.log(cor,i)
+ let res = cores.map((cor,i)=>{
+     console.log(cor)
 
-// // })
+ })
 
 
 // // // Exemplo usamos map para fazer operaçõe aritméticas//
@@ -151,4 +151,11 @@
   //   }
     
   // console.log(numeroprimo(numeros))
- 
+
+
+  let x = [1,2,3,5,6,8,9]
+  x.forEach((e)=>{
+    if(e % 2 != 0){
+      console.log(e)
+    }
+  })

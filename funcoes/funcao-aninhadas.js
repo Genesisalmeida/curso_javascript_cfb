@@ -7,9 +7,8 @@ let soma= (...valores)=>{
             let n = 0;
             for(i of val){
                 n+= i;
-                return n
             }
-        
+             return n;
         } 
         return somar(valores)
 }

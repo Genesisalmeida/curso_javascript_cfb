@@ -14,7 +14,7 @@ while(n <= cont){
 //continue
 
 for(let i = 0; i<=10; i++){
-    if(i%2 == 0){
+    if(i%2 ==!0){
         continue; // ele para a execução do mod 2 e retorna os numeros impares
             
         }
@@ -22,4 +22,3 @@ for(let i = 0; i<=10; i++){
      
         
 }
-

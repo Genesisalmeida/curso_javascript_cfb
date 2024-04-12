@@ -42,6 +42,7 @@ switch (foo) {
     break;
   default:
     console.log("Favor escolher um número de 0 à 6!");
+    break
 }
 
 
@@ -64,6 +65,7 @@ switch(menu){
     break;  
   default:
     alert('Escolha uma opção valída');
+    break
 }*/
 
 

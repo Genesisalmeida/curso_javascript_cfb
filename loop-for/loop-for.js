@@ -1,4 +1,5 @@
 // loop for \\
+//for significa para//
 
 for(let i = 0; i<20; i++){
         if(i%2 ==0){
@@ -6,4 +7,8 @@ for(let i = 0; i<20; i++){
         }else{
             console.log(`O numero ${i} é ímpar.`)
         }
-}
+};
+
+
+
+

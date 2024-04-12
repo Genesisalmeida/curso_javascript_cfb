@@ -17,7 +17,7 @@ let nome = function(...name){ // lembrado que aqui 'spread'//
     return name;
 }
 
-console.log(nome(name))
+console.log(nome('genesis'))
 
 
 // function anônima contrutor//
@@ -31,3 +31,5 @@ console.log(f(10,10));
 (res)=>{
     return res
 }
+
+
