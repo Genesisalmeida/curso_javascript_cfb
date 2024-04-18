@@ -24,7 +24,7 @@ obj.map((e)=>{
     e.appendChild(img);
 
     img.addEventListener('click', (elm)=>{
-       
+       console.log(elm.target)
         e.remove()
 
     })

@@ -32,7 +32,7 @@ let somadigito=(n)=>{
         
         soma+=res
     }
-    return soma
+    return soma 
 } 
 const nuber = 1596;
 const result = somadigito(nuber)
