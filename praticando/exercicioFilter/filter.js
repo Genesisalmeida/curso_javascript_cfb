@@ -6,11 +6,11 @@ const adicionarAntes =document.querySelector('#ada');
 const adicionandoDepois = document.querySelector('#add');
 
 const radioSelecionado=()=>{ // fuction para selecionar os elementos
-    const todosradio = [...document.querySelectorAll('input[type=radio]')];
-    const rs= todosradio.filter((elem)=>{
-        return elem.checked;
+    const todosradio = [...document.querySelectorAll('input[type=radio]')];//aqui estamos pegando input do tipo radio//
+    const radioSelecionado= todosradio.filter((elem)=>{
+        return elem.checked; //aqui estamos pegando radio que foi selecionado//
     });
-         return rs[0];//aqui estamos pegamos somente o conteudo do radio selecionado na posição 0
+         return radioSelecionado[0];//aqui estamos pegamos somente o conteudo do radio selecionado na posição 0
 }
 buttom.addEventListener('click',(evt)=>{
     const input = document.querySelector('#input');
@@ -26,12 +26,12 @@ buttom.addEventListener('click',(evt)=>{
 buttomRemove.addEventListener('click',(evt)=>{
     const elementselect = radioSelecionado()//aqui ja estamos usando a funçao'radioSelecionado no buttomremove//
     if(elementselect!=undefined){ // aqui estamos tratando o erro do consoole undefined
-        const cursosSelecionados = elementselect.parentNode
-        cursosSelecionados.remove()
+        const cursosSelecionados = elementselect.parentNode ;//pai Nó
+        cursosSelecionados.remove();
         const input = document.querySelector('#input');
-        input.value=''
+        input.value='';
     }else{
-        console.log('selecione um curso')
+        console.log('selecione um curso');
     }
   
 });
@@ -59,7 +59,7 @@ adicionarAntes.addEventListener('click',(evt)=>{
     const criarnovocurso = criarNovocurso()
         if(radiosSelecionados && criarnovocurso){
             const cursosSelecionados= radiosSelecionados.parentNode
-            div.insertBefore(criarnovocurso,cursosSelecionados) 
+            div.insertBefore(criarnovocurso,cursosSelecionados) // ele receber o NÓ que ele quer adicionar 'criarnovocurso' e a onde ele quer adicionar 'cursosSelecionados' insertBefore significa adicionar antes//
         }  
             
     })
@@ -72,4 +72,3 @@ adicionandoDepois.addEventListener('click',(evt)=>{
             div.insertBefore(criarnovocurso,cursosSelecionados.nextSibling);  // aqui uma maneira de adicionar depois usando 'nextsibling' ou seja  PROXIMOIRMÃO
     }
 });
-   

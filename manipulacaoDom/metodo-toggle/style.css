@@ -27,6 +27,7 @@ body{
     justify-content: space-between;
     width: 100px;
     text-align: center;
+    justify-content: center;
     background-color: #ffffff;
     border-radius: 30px; 
     padding: 20px;

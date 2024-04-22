@@ -6,26 +6,23 @@ const selection = document.querySelector('#selection');
 const remove = document.querySelector('#remove');
 const cursos = [...document.querySelectorAll('.liguagem')];
 
-const selecionados = ()=>{
     cursos.map((ele)=>{
         ele.addEventListener('click',(evt)=>{
-         tirarSelecao();  
-        evt.target.classList.toggle('selecionado');  
+        tirarSelecao();  
+        evt.target.classList.toggle('selecionado'); //ele fica alternando entre uma classe e outra,ele adiciona o selecionado e depois remove;
         })
-    })
-};
+    });
 
 const tirarSelecao=()=>{
     cursos.map((el)=>{
         el.classList.remove('selecionado');
     })
+ 
 };
-
-selecionados();
-
 const cursosSelection=()=>{
     const selecionado =[...document.querySelectorAll('.selecionado')];
-     return selecionado[0]
+    return selecionado[0]
+   
 };
 
 const criarNovocurso=()=>{ //função  que cria elemento//
@@ -35,6 +32,10 @@ const criarNovocurso=()=>{ //função  que cria elemento//
         element.innerHTML = input.value;
         element.setAttribute('class', 'liguagem');
         caixa.append(element);
+        element.addEventListener('click',(evt)=>{
+            evt.target.classList.toggle('selecionado') 
+            tirarSelecao(); 
+        })
         return element;
     } else {
            alert('Digite o nome do curso');
@@ -52,8 +53,8 @@ addAntes.addEventListener('click',()=>{
 addDepois.addEventListener('click',()=>{
     const addcursos = criarNovocurso();
     const selection = cursosSelection();
-    if(addcursos && selection){
-        caixa.insertBefore(addcursos,selection.nextSibling)
+        if(addcursos && selection){
+            caixa.insertBefore(addcursos,selection.nextSibling)
     }
 });
 
@@ -69,7 +70,7 @@ selection.addEventListener('click',(evt)=>{
 remove.addEventListener('click',()=>{
     const cursoSelecionado = cursosSelection()
         if(cursoSelecionado!==undefined){
-        cursoSelecionado.remove() 
+            cursoSelecionado.remove() 
         }else{
             alert('Selecione um curso para remover');
         }
