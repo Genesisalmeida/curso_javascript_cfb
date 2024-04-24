@@ -3,9 +3,9 @@
 }
 #box_array{
     display: flex;
-    align-items: center;
+    flex-direction: column;
     border-radius: 10px;
-    padding: 5px;
+    padding:12px 5px ;
     width: 100vw;
     height:3vh;
     background-color: #66a4ea;
@@ -27,7 +27,7 @@
     justify-content: center;
     flex-direction: column;
     border-radius: 10px;
-    margin-top: 3px;
+    margin-top: 10px;
     padding: 5px;
     width: 100vw;
     height:3vh;
@@ -35,14 +35,15 @@
     border: 4px solid  #ffc400 ;
 }
 
-#txt_pesquisa{
-    width:200px;
-    height:5vh ;
-    margin-bottom: 5px;
-}
 #btnPesquisar{
     width: 15vw;
-    border-radius: 25px;
+    height: 5vh;
+    margin-top: 10px;
+    border-radius:25px;
     background-color: #006400;
     color: white;
+}
+.box_azul{
+    display: flex;
+    justify-content: center;
 }

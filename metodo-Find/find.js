@@ -7,13 +7,13 @@ const elementos_array = ['bola','carro','casa','camisa','estadio'];
 p_array.innerHTML=`[${elementos_array}]`;
 
 button.addEventListener('click', ()=>{
-  elementos_array.find((ele,i)=>{
-    const result = resultado
+  elementos_array.find((ele,i)=>{// metodo find rertona o primeiro elemento que obedece uma determinada condição//
     if(ele.toUpperCase() === pesquisar.value.toUpperCase()){
-        return result.innerHTML= ` ${ele} na posição ${i} existe no array `
+        return resultado.innerHTML= ` ${ele} existe no array na posição ${i}`;
     }else{
-        result.innerHTML= ` ${pesquisar.value} não encontrado`
+        result.innerHTML= ` ${pesquisar.value} não encontrado`;
     }
+  });
+});
 
-  })
-})
+
