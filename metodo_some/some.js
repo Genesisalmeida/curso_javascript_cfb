@@ -1,4 +1,4 @@
-//metodo some//
+// metodo some//
 // O método some() em JavaScript é uma maneira de verificar se pelo menos um dos elementos em um array satisfaz uma determinada condição. Ele retorna true se pelo menos um elemento passar no teste especificado pela função de callback, caso contrário, retorna false.
 
 // Em resumo, o some() é como uma pergunta: "Existe pelo menos um elemento que atenda a essa condição?" Se a resposta for sim para pelo menos um elemento, o some() retorna true; se não, retorna false. É útil quando você precisa saber se pelo menos uma condição é verdadeira em um array.
@@ -23,3 +23,12 @@ button.addEventListener('click',()=>{
     }
 });
 
+
+
+const numeros = [10,1,2,3];
+
+
+let ret  = numeros.some((ele)=>{
+    return ele >= 18
+})
+console.log(ret)
