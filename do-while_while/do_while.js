@@ -6,29 +6,29 @@
 
 
 // while
-let n = 10;
+let n = 1;
 while(n<10){
-    comsole.log('binho');
-    
+     console.log('binho');
+     n++
 }
-console.log('fim do programa');
+// console.log('fim do programa');
 
-// do while
+// // do while
 
-let n1 = 1;
+// let n1 = 1;
 
-do{
-    console.log('binho');
-    n1++
-}while(n1<12)
+// do{
+//     console.log('binho');
+//     n1++
+// }while(n1<12)
 
 
-// exercicio//
+// // exercicio//
 
-let carros = ['gol','kadet','uno','s10'];
-let i = 0;
-do{
-    console.log(carros[i]);
-    i++
+// let carros = ['gol','kadet','uno','s10'];
+// let i = 0;
+// do{
+//     console.log(carros[i]);
+//     i++
     
-}while(i <= carros.length);
+// }while(i <= carros.length);
