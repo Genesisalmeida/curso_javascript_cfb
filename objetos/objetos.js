@@ -32,7 +32,10 @@ class Carro{
     setNome(nome){
         return this.nome = nome
     }
-    info(){ // podemos criar funções no objeto
+    getinfo(){
+        return [this.nome,this.tipo,this.velmax]; // um exemplo de como retorna os valores com array
+    }
+    info(){ // podemos criar funções no objeto,aqui um exemplo como retornar  as informações do objeto
         console.log(`Nome:${this.nome}`);
         console.log(`Tipo:${this.tipo}`);
         console.log(`VelMax:${this.velmax}`);
@@ -43,8 +46,16 @@ let carro1 = new Carro('FERRARI',1);
 let carro2 = new Carro('GOL',2);
 let carro3= new Carro('COROLA',3);
 let carro4 = new Carro('VOYAGE',5);
-carro1.cunome('cuNome')
 carro1.info();
 carro2.info();
 carro3.info();
 carro4.info();
+
+let arrayobj = carro1.getinfo()
+for(let ele of arrayobj){
+    console.log(ele)
+}
+
+
+
+
