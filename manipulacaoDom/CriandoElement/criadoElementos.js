@@ -6,7 +6,7 @@ const cursos = ['php','css','javascript','html'];
 
 cursos.map((el)=>{
    const newElement = document.createElement('h1');
-    newElement.setAttribute('class', 'obj'); // 
+    newElement.setAttribute('class', 'set'); // 
     div.appendChild(newElement)
     newElement.innerHTML=el
 });
