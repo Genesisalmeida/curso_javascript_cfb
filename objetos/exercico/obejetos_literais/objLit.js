@@ -5,6 +5,7 @@ const but = document.querySelector(".add");
 const pessoas = [];
 
 but.addEventListener('click', () => {
+
     // Obter os valores dos inputs dentro do evento de clique
     const pessoa = {
         nome: input1.value,
@@ -24,6 +25,8 @@ but.addEventListener('click', () => {
         div.innerHTML = `Nome: ${ele.nome} <BR/> Idade: ${ele.idade}`;
         res.appendChild(div);
     });
+    input1.value='';
+    input2.value='';
 });
 
 
