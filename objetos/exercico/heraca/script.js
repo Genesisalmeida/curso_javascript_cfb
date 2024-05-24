@@ -9,12 +9,19 @@ const buttonDelete = document.querySelector('#delete')
 const res = document.querySelector('.res');
 let car = [];
 
-const removerCar=(carRemove)=>{
-  car=car.filter((ele)=>{
-      return ele.nome!=carRemove
-    })
+// Função para remover um carro com o nome especificado
+const removerCar = (carRemove) => {
+    let removed = false; // Variável de controle para garantir que apenas o primeiro carro seja removido
+    car = car.filter((ele) => {
+        if (!removed && ele.nome === carRemove) {
+            removed = true; // Marca que um carro foi removido
+            return false; // Não inclui o carro removido no novo array
+        }
+        return true; // Inclui todos os outros carros no novo array
+    });
     
 }
+
 
 // Criando a classe Carro
 class Carro {
@@ -22,6 +29,7 @@ class Carro {
         this.nome = nome;
         this.portas = portas;
         this.ligado = false;
+        this.cor='azul'
     }
 
     ligar = () => {
@@ -66,7 +74,8 @@ const renderCars = () => {
         button.addEventListener('click',(evt)=>{
             const remover = evt.target.parentNode.dataset.nome
             removerCar(remover)
-            renderCars()
+            console.log(car)
+           renderCars()
     
         })
         const div = document.createElement('div');
@@ -115,4 +124,3 @@ typeNormal.addEventListener('change', toggleFields);
 
 // Inicialização dos campos
 toggleFields();
-console.log(car)
