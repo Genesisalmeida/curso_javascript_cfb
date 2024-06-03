@@ -40,5 +40,4 @@ p1.fazerBarulho(); // Output: Cachorro faz: auau
 console.log('Cachorro:', p1);
 
 
-
-
+// O polimorfismo é um dos pilares da programação orientada a objetos e permite que métodos com o mesmo nome tenham diferentes implementações em classes distintas, dependendo do objeto que está invocando o método. Seu exemplo ilustra bem esse conceito.

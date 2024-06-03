@@ -1,0 +1,47 @@
+*{
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.calc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.display_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.teclas_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    flex-wrap: wrap;
+    border: 5px solid #000000;
+}
+.teclas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #aaa;
+    border: 3px solid #888;
+    font-weight: bold;
+    margin: 1px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.tecla_operacao{
+    background-color: #f44 !important;
+    border-color: #800 !important;
+}
