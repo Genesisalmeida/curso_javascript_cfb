@@ -8,9 +8,8 @@ const clear = document.querySelector('#limpar');
 const teclaIgual = document.querySelector('#tigual');
 const teste = document.querySelector('#teste');
 const gavetaon = document.querySelector('.gavetaon');
-const gavetaof = document.querySelector('.gavetaof');
-const img = document.querySelector('.teste');
-const box = document.querySelector('.box');
+const gavetaof = document.querySelector('#gavetaof')
+const img = document.querySelector('.img');
 
 let sinal = false;
 let decimal = false;
@@ -80,15 +79,16 @@ tcopy.addEventListener('click', (evt) => {
 });
 
 // transição da gaveta
-gavetaon.addEventListener('click', (evt) => {
-    gavetaon.classList.toggle('teste');
-    calculadora.style.display = calculadora.style.display === 'flex' ? 'none' : 'flex';
-    img.style.display = img.style.display === 'flex' ? 'none' : 'flex';
+gavetaon.addEventListener('click', () => {
+    calculadora.classList.toggle('active');
+    gavetaon.style.display =gavetaon.style.display ==='none'? 'flex':'none'
+    gavetaof.style.display =gavetaof.style.display ==='flex'? 'none':'flex'
+
 });
 
-gavetaof.addEventListener('click', (evt) => {
-    gavetaon.classList.toggle('teste');
-    calculadora.style.display = calculadora.style.display === 'none' ? 'flex' : 'none';
-    img.style.display = img.style.display === 'none' ? 'flex' : 'none';
-});
+gavetaof.addEventListener('click', () => {
+    calculadora.classList.toggle('active');
+    gavetaof.style.display =gavetaof.style.display ==='flex'? 'none':'flex'
+    gavetaon.style.display =gavetaon.style.display ==='none'? 'flex':'none'
 
+});

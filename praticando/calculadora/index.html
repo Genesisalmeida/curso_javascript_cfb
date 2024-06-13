@@ -7,41 +7,45 @@
     <title>Calculadora</title>
 </head>
 <body>
-   <div class="box">
-        <div id="calc" class="calc">
-                <div id="nome" class="nome">
-                    <p>Calculadora</p>
-                </div>
-                <div id="display_div" class="display_div">
-                    <p id="display" class="display ">0</p>
-                </div>
-                <div id="teclas" class="teclas_div">
-                    <button id="tcopy" class="teclas tecla_operacao ">CPY</button>
-                    <button id="limpar" class="teclas">CL</button>
-                    <button id="t(" class="teclas num">(</button>
-                    <button id="t)" class="teclas num">)</button>
-                    <button id="t7" class="teclas  num">7</button>
-                    <button id="t8" class="teclas num">8</button>
-                    <button id="t9" class="teclas num">9</button>
-                    <button id="t+" class="teclas tecla_operacao op">+</button>
-                    <button id="t4" class="teclas num">4</button>
-                    <button id="t5" class="teclas num">5</button>
-                    <button id="t6" class="teclas num">6</button>
-                    <button id="t-" class="teclas tecla_operacao op">-</button>
-                    <button id="t1" class="teclas num">1</button>
-                    <button id="t2" class="teclas num">2</button>
-                    <button id="t3" class="teclas num">3</button>
-                    <button id="t*" class="teclas tecla_operacao op">x</button>
-                    <button id="t0" class="teclas num">0</button>
-                    <button id="tseparador" class="teclas num">,</button>
-                    <button id="tigual" class="teclas tecla_operacao res">=</button>
-                    <button id="t/" class="teclas tecla_operacao op">/</button>
-                </div>
+    <div class="container">
+        <div class="icon gavetaon">
+            <img class="img" src="assets/img/calcular1.png" alt="">
+        </div>
+        <div class="icon " id="gavetaof">
+            <img class="img" src="assets/img/calcular.png" alt="">
+        </div>
+        <div class="calc" id="calc">
+            <div id="nome" class="nome">
+                <p>Calculadora</p>
             </div>
-            <div class="gavetaon"><img class="img" src="assets/img/calcular1.png" alt=""></div>
-            <div class="teste gavetaof"><img class="img" src="assets/img/calcular.png" alt=""></div>
+            <div id="display_div" class="display_div">
+                <p id="display" class="display">0</p>
+            </div>
+            <div id="teclas" class="teclas_div">
+                <button id="tcopy" class="teclas tecla_operacao">CPY</button>
+                <button id="limpar" class="teclas">CL</button>
+                <button id="t(" class="teclas num">(</button>
+                <button id="t)" class="teclas num">)</button>
+                <button id="t7" class="teclas num">7</button>
+                <button id="t8" class="teclas num">8</button>
+                <button id="t9" class="teclas num">9</button>
+                <button id="t+" class="teclas tecla_operacao op">+</button>
+                <button id="t4" class="teclas num">4</button>
+                <button id="t5" class="teclas num">5</button>
+                <button id="t6" class="teclas num">6</button>
+                <button id="t-" class="teclas tecla_operacao op">-</button>
+                <button id="t1" class="teclas num">1</button>
+                <button id="t2" class="teclas num">2</button>
+                <button id="t3" class="teclas num">3</button>
+                <button id="t*" class="teclas tecla_operacao op">x</button>
+                <button id="t0" class="teclas num">0</button>
+                <button id="tseparador" class="teclas num">,</button>
+                <button id="tigual" class="teclas tecla_operacao res">=</button>
+                <button id="t/" class="teclas tecla_operacao op">/</button>
+            </div>
+        </div>
     </div>
-    
+
     <input type="text" id="teste" name="teste" style="display:none;">
 
     <script src="script.js"></script>

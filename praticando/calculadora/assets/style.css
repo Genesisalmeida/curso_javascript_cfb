@@ -1,38 +1,162 @@
-*{
+* {
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    margin: 0;
+  }
+  
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    * {
   border: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
-    display: flex;
-    
-    margin: 0;
-}
-.box{
-    display: flex;
-    flex-direction: row;
-    background-color: #81c0f0;
-    border-radius: 15px;
-}
-.gavetaon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
 
+body {
+  display: flex;
+  margin: 0;
 }
-.gavetaof{
-   display: flex;
-   height: 52px;
- 
-    
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.gavetaon, .gavetaof {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  cursor: pointer;
+}
+#gavetaof{
+    display: none;
 }
 .teste{
     display: none;
 }
-.calc{ 
-    display: flex;
+.icon {
+  width: 52px;
+  height: 52px;
+}
+
+.calc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  border: 3px solid #bbb;
+  border-radius: 18px;
+  width: 230px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.8s ease, opacity 0.5s ease;
+}
+
+.calc.active {
+  max-height: 500px; /* Ensure this value can contain the calculator */
+  opacity: 1;
+}
+.of{
     display: none;
+}
+
+.nome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+}
+
+.display_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.teclas_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  flex-wrap: wrap;
+  border: 5px solid #7b7878;
+  border-radius: 0 0 15px 15px;
+}
+
+.teclas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #aaa;
+  border: 3px solid #888;
+  font-weight: bold;
+  margin: 1px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.tecla_operacao {
+  background-color: #f44 !important;
+  border-color: #800 !important;
+}
+
+.display_div {
+  display: flex;
+  justify-content: end;
+  border: 5px solid #7b7878;
+  background-color: aquamarine;
+  width: 220px;
+  height: 60px;
+}
+
+.display {
+  font-size: 30px;
+  margin-right: 5px;
+}
+
+#teste {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 15px;
+  width: 15vw;
+  height: 30px;
+}
+
+.img {
+  width:52px;
+  
+}
+
+  }
+  
+  .gavetaon, .gavetaof {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .calc {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -40,20 +164,31 @@ body{
     border: 3px solid #bbb;
     border-radius: 18px;
     width: 230px;
-}
-.nome{
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+  }
+  
+  .calc.active {
+    max-height: 500px; /* Ensure this value can contain the calculator */
+    opacity: 1;
+  }
+  
+  .nome {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 220px;
-}
-.display_div{
+  }
+  
+  .display_div {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-}
-.teclas_div{
+  }
+  
+  .teclas_div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,8 +196,9 @@ body{
     flex-wrap: wrap;
     border: 5px solid #7b7878;
     border-radius: 0 0 15px 15px;
-}
-.teclas{
+  }
+  
+  .teclas {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,31 +210,33 @@ body{
     width: 50px;
     height: 50px;
     cursor: pointer;
-}
-.tecla_operacao{
+  }
+  
+  .tecla_operacao {
     background-color: #f44 !important;
     border-color: #800 !important;
-}
-.display_div{
+  }
+  
+  .display_div {
     display: flex;
     justify-content: end;
     border: 5px solid #7b7878;
     background-color: aquamarine;
     width: 220px;
     height: 60px;
-}
-.display{
-   font-size: 30px;
-   margin-right: 5px;
-   
-}
-#teste{
+  }
+  
+  .display {
+    font-size: 30px;
+    margin-right: 5px;
+  }
+  
+  #teste {
     border: 1px solid black;
     border-radius: 10px;
     margin-top: 15px;
     width: 15vw;
     height: 30px;
-}
-.img{
-    width: 52px;
-}
+  }
+  
+ 
