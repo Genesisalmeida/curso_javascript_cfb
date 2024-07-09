@@ -81,8 +81,8 @@ tcopy.addEventListener('click', (evt) => {
 // transição da gaveta
 gavetaon.addEventListener('click', () => {
     calculadora.classList.toggle('active');
-    gavetaon.style.display =gavetaon.style.display ==='none'? 'flex':'none'
-    gavetaof.style.display =gavetaof.style.display ==='flex'? 'none':'flex'
+    gavetaon.style.display = gavetaon.style.display ==='none'? 'flex':'none'
+    gavetaof.style.display = gavetaof.style.display ==='flex'? 'none':'flex'
 
 });
 
