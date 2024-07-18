@@ -38,3 +38,14 @@ date.style.color='red'
 // toISOString(): Retorna a data no formato ISO 8601.
 
 
+function time(){
+
+let relogio = new Date()
+const tempo = document.querySelector('.relogio')
+tempo.innerHTML =`${relogio.getHours()}:${relogio.getMinutes()}:${relogio.getSeconds()}`
+
+setTimeout('time()',500)
+}
+
+
+
