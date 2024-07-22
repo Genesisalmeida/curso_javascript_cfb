@@ -1,7 +1,22 @@
 // data e hora
 
 const date = document.querySelector('.date')
+const horaAlarme = document.querySelector('.hora_alarme')
+const btn_parar = document.querySelector('#B_parar')
+const btn_ativar = document.querySelector('#B_ativar')
+const temp_alarme= document.querySelector('#tmp_alar')
+const box_time = document.querySelector('.box_time')
 let data = new Date()
+const som = new Audio("som/alarm-26718.mp3")
+
+console.log(som)
+som.loop = -1
+
+let ts_atual = null
+let ts_alarme = null
+let alarme_ativado = false
+let alarme_desativado = false
+let alarme_tocando = false
 
 
 const data_r = data.getDate()+'/'+ data.getMonth()+'/'+data.getFullYear()
@@ -38,14 +53,54 @@ date.style.color='red'
 // toISOString(): Retorna a data no formato ISO 8601.
 
 
+
+
 function time(){
-
-let relogio = new Date()
-const tempo = document.querySelector('.relogio')
-tempo.innerHTML =`${relogio.getHours()}:${relogio.getMinutes()}:${relogio.getSeconds()}`
-
-setTimeout('time()',500)
+    let relogio = new Date()
+    let hora = relogio.getHours()
+    let minutos = relogio.getMinutes()
+    let segundos = relogio.getSeconds()
+    const tempo = document.querySelector('.relogio')
+    tempo.innerHTML =`${hora=hora<10?"0"+hora:hora}:${minutos=minutos<10?"0" + minutos:minutos}:${segundos=segundos<10?"0"+segundos:segundos}`
+    if(alarme_ativado && !alarme_tocando){
+        if(relogio.getTime() >= ts_alarme){
+            alarme_tocando = true
+            som.play()
+            box_time.classList.add('alarme')
+        }
+    }
+    setTimeout(time,500)
 }
+time();
+
+btn_ativar.addEventListener('click',()=>{
+    
+    ts_atual=Date.now()
+    ts_alarme=ts_atual+(temp_alarme.value*1000)
+    alarme_ativado=true
+    const dt_alarme = new Date(ts_alarme)
+    horaAlarme.innerHTML = 'hora do alarme:'+ dt_alarme.getHours()+':'+dt_alarme.getMinutes()+':'+dt_alarme.getSeconds()
+})
+btn_parar.addEventListener('click',()=>{
+  alarme_ativado = false
+  alarme_desativado = false
+  horaAlarme.innerHTML='Hora do alarme:'
+  temp_alarme.value = 0
+  box_time.classList.remove('alarme')
+  som.pause()
+  som.correntTime = 0;
+  time();
+  function reloadPage() {
+    location.reload();
+}
+reloadPage()
+})
+// Criando  time com  alarme //
+
+
+
+    
+
 
 
 

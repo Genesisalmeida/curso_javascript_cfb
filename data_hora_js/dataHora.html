@@ -6,15 +6,24 @@
     <link rel="stylesheet" href="style.css">
     <title>Data e Hora</title>
 </head>
-<body onload="time()">
+<body >
+   <div class="box_time">
     <div class="date">
         <h1 class="date"></h1>
     </div>
-    <div class="relogio">
+     <div class="relogio">
         00:00:00
-    </div>
-
-
+     </div>
+<div class="box_alarme">
+    <p class="hora_alarme">Hora do Alarme:</p>
+    <p>Tempo do alarme(segundos)</p>
+    <input id="tmp_alar" type="number">
+</div> 
+<div class="comandos">
+    <button id="B_ativar">Ativar</button>
+    <button id="B_parar">Parar</button>
+</div> 
+   </div> 
     <script src="dataHora.js"></script>
 </body>
 </html>
