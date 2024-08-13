@@ -1,0 +1,34 @@
+.box{
+    display: flex;
+    flex-direction: row;
+}
+
+.circulo{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    border: 15px solid #000;
+    border-radius:50%;
+
+}
+.mine_circulo{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    border-radius: 50%;
+}
+.micro_circulo{
+    display: flex;
+    width: 25px;
+    height: 25px;
+    margin-bottom: 27px;
+    margin-right: 14px;
+    background-color: #ffffff;
+    border-radius: 50%;
+}

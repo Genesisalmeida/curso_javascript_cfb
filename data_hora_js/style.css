@@ -4,6 +4,13 @@
     box-sizing: border-box;
     
 }
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    
+}
 .relogio{
     display: flex;
     justify-content: center;
