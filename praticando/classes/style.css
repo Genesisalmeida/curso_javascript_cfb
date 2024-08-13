@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow:hidden;
+    
+}
+
+.box{
+    display: flex;  
+    background-color: #edf1ef;
+    justify-content: space-between;
+    border: 3px solid black;
+    width: 100vw;
+    height:120px;
+    padding: 7px;
+    align-items: center;
+
+}
+.box_AT{
+    display: flex;
+    width: 100vw;
+    height: 62vw;
+    border: 3px solid black;
+    border-radius: 15px;
+}
+.obejct{
+    display: flex;
+    align-items: center;
+    border: 2px solid #3a3a3a;
+    padding: 10px;
+    width:32vw;
+    height: 90px;
+}
+input{
+    height:30px;
+    border-radius: 10px;
+}
+.but{
+    background-color: #d2d2d2;
+    padding: 5px;
+    overflow:hidden;
+}
