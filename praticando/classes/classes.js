@@ -17,8 +17,9 @@ class Bola{
         this.r = Math.floor(Math.random()*255);
         this.g = Math.floor(Math.random()*255);
         this.b = Math.floor(Math.random()*255);
-        this.px = Math.floor(Math.random()*(larguraPalco-this.tam));
-        this.py = Math.floor(Math.random()*(larguraPalco-this.tam));
+        this.px = Math.floor(Math.random() * (larguraPalco - this.tam));
+        this.py = Math.floor(Math.random() * (alturaPalco - this.tam));
+        ;
         this.velox = Math.floor(Math.random()*2)+0.5;
         this.veloy = Math.floor(Math.random()*2)+0.5;
         this.dirx = (Math.random()*10) > 5 ? 1 : -1;
@@ -48,14 +49,38 @@ class Bola{
         numeroObjt.innerHTML = numBola
     }
     desenhar=()=>{
-        const div = document.createElement('div');
-        div.setAttribute('id',this.id)
-        div.setAttribute('class','bola')
-        div.setAttribute('style',`left:${this.px};top:${this.py};width:${this.tam};height:${this.tam};background-color:rgb(${this.r},${this.g},${this.b})`);
-        this.palco.appendeChild(div)
+        const div = document.createElement("div");
+        div.setAttribute("id",this.id)
+        div.setAttribute("class","bola")
+        div.setAttribute('style',`left:${this.px}px;top:${this.py}px;width:${this.tam}px;height:${this.tam}px;background-color:rgb(${this.r},${this.g},${this.b})`);;
+        this.palco.appendChild(div)
+      
     }
+   
+    
+        controle_bordas = () => {
+            if (this.px + this.tam >= larguraPalco) {
+                this.dirx = -1;
+            } else if (this.px <= 0) {
+                this.dirx = 1;
+            }
+            if (this.py + this.tam >= alturaPalco) {
+                this.diry = -1;
+            } else if (this.py <= 0) {
+                this.diry = 1;
+            }
+        }
+        
+            
+    
     controlar=()=>{
-
+       this.controle_bordas()
+        this.px+=this.dirx*this.velox
+        this.py+=this.diry*this.veloy
+        this.eu.setAttribute('style',`left:${this.px}px;top:${this.py}px;width:${this.tam}px;height:${this.tam}px;background-color:rgb(${this.r},${this.g},${this.b})`);
+        if((this.px > larguraPalco)||(this.py > alturaPalco)){
+            this.remover()
+        }
     }
 }
 
@@ -67,16 +92,15 @@ window.addEventListener("resize",(evt)=>{ // evento  que pega as dimensões da t
 });
 
 butAdd.addEventListener("click",(evt)=>{
-    const quantObj = quantidaObjt.value
-    for(let i=0; i<quantObj;i++){
-
-     }
+    const quantObj =parseInt(quantidaObjt.value) 
+    for(let i = 0; i < quantObj; i++){
+        bolas.push(new Bola(bolas, palco));   
+    }
+    
 })
 
 butRemove.addEventListener("click",(evt)=>{
     bolas.map((b)=>{
-        //remover a bolinha
-
-        
-    })
+        b.remover()
+     })
 })
