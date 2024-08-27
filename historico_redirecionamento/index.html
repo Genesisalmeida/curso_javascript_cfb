@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico Redirecionamento</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: aquamarine;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+        input,button{
+            margin-bottom: 10px;
+        }
+        input[type=url]{
+            border:2px solid #000;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #eee;
+        }
+        button{
+            background-color: #eee;
+            padding: 5px 30px;
+            border-radius: 10px;
+            width: 15vw;
+        }
+    </style>
+</head>
+<body>
+    <h1>CRB CURSOS</h1>
+    <form onsubmit="event.preventDefault()" action="">
+        <input type="url" id="url" placeholder="https://www.google.com" pattern="https://.*" size="30" required>
+        <button id="but"> Ir</button>
+    </form>
+   
+<script src="histo_redirecion.js"></script>
+</body>
+</html>

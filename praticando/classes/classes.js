@@ -4,31 +4,31 @@ const quantidaObjt = document.querySelector('#Q_obj');
 const butAdd= document.querySelector('.but');
 const butRemove = document.querySelector('#butt_remover');
 
-let larguraPalco = palco.offsetWidth; // pegando  largura da area box_AT
-let alturaPalco = palco.offsetHeight; // pegando altura da area arre box_AT
+let larguraPalco = palco.offsetWidth; // Armazenam a largura  do palco, ou seja, a área onde as bolinhas vão se mover.
+let alturaPalco = palco.offsetHeight; // Armazenam a altura  do palco, ou seja, a área onde as bolinhas vão se mover.
 let bolas = [];
-let numBola =0;
+let numBola =0; // Contador que rastreia o número de bolinhas ativas.
 
 //criando a classe bola
 
 class Bola{
     constructor(arrayBolas,palco){
-        this.tam = Math.floor(Math.random()*10)+10;
+        this.tam = Math.floor(Math.random()*10)+10;//Define o tamanho da bolinha, que é aleatório
         this.r = Math.floor(Math.random()*255);
         this.g = Math.floor(Math.random()*255);
         this.b = Math.floor(Math.random()*255);
-        this.px = Math.floor(Math.random() * (larguraPalco - this.tam));
+        this.px = Math.floor(Math.random() * (larguraPalco - this.tam));// Definem a posição inicial da bolinha dentro do palco, considerando seu tamanho para que não fique fora da área.
         this.py = Math.floor(Math.random() * (alturaPalco - this.tam));
         ;
-        this.velox = Math.floor(Math.random()*2)+0.5;
-        this.veloy = Math.floor(Math.random()*2)+0.5;
+        this.velox = Math.floor(Math.random()*2)+0.5;//velocidade da bolina na direção x
+        this.veloy = Math.floor(Math.random()*2)+0.5;// velocidade na direção y
         this.dirx = (Math.random()*10) > 5 ? 1 : -1;
         this.diry = (Math.random()*10) > 5 ? 1 : -1;
         this.palco = palco
         this.arrayBolas = arrayBolas
-        this.id = Date.now()+"_"+Math.floor(Math.random()*10000000000000);
-        this.desenhar()
-        this.controle = setInterval(this.controlar,10)
+        this.id = Date.now()+"_"+Math.floor(Math.random()*10000000000000);// Gera um identificador único para a bolinha, que será usado para manipulação no DOM.
+        this.desenhar() //chama o metodo que vai  desenhar a bola
+        this.controle = setInterval(this.controlar,10) // Define um intervalo que chama o método controlar a cada 10ms para atualizar a posição da bolinha.
         this.eu=document.getElementById(this.id)
         numBola++
         numeroObjt.innerHTML = numBola
@@ -88,15 +88,15 @@ class Bola{
 window.addEventListener("resize",(evt)=>{ // evento  que pega as dimensões da tela quando alteramosa mesma
     larguraPalco=palco.offsetWidth
     alturaPalco = palco.offsetHeight
-    console.log(alturaPalco)
+    
 });
 
 butAdd.addEventListener("click",(evt)=>{
-    const quantObj =parseInt(quantidaObjt.value) 
+    const quantObj =quantidaObjt.value
     for(let i = 0; i < quantObj; i++){
         bolas.push(new Bola(bolas, palco));   
     }
-    
+    console.log(bolas)
 })
 
 butRemove.addEventListener("click",(evt)=>{
@@ -104,3 +104,5 @@ butRemove.addEventListener("click",(evt)=>{
         b.remover()
      })
 })
+
+
