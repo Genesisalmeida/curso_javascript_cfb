@@ -154,9 +154,57 @@
 // console.log('A média dos valores digitados são ',media)
 // console.log('A soma dos numeros pares são ', +somaDopares)
 
-let fi = [0,1]
-let n = 4
-for(let i = 2; i < n; i++){
-   fi[i]= fi[i-1] + fi[i-2]
+
+
+// // fuction
+// let maior = 0;
+// let p = 0;
+// let nome = '';  // Inicia a variável nome como uma string vazia
+
+// const maiorPeso = () => {
+//    for (let i = 0; i < 2; i++) {  // A quantidade de vezes que o loop vai rodar (aqui, é 2)
+//       let nomePessoa = prompt('Digite nome:');  // Armazenando o nome da pessoa
+//       let peso = Number(prompt('Digite seu peso:'));  // Lendo o peso da pessoa e convertendo para número
+
+//       // Verifica se o peso é maior que o peso registrado
+//       if (peso > p) {
+//          p = peso;  // Atualiza o maior peso
+//          nome = nomePessoa;  // Atualiza o nome com a pessoa que tem o maior peso
+//       }
+//    }
+// };
+
+// maiorPeso();  // Chama a função para rodar o processo
+
+// console.log(`O maior peso contabilizado foi de ${nome} com o valor de ${p}kg.`);
+
+
+// // 
+
+
+// function parImpar(n){
+//    if(n%2==0){
+//       console.log('Numero digitado é par ');
+//    }else{
+//       console.log('Numero digitado é Impar');
+//    }
+// }
+
+// const v = Number(prompt('Digite um valor'));
+
+// parImpar(v);
+
+// fibonacci
+let fib = [0,1];
+
+function fibonacci(n,val){
+   for(let i = 2; i < val ; i++){
+      n[i] = n[i-1] + n[i-2]
+     
+   }
+   return n
+   
 }
-console.log(fi)
+console.log(fibonacci(fib,100))
+
+

@@ -103,10 +103,15 @@
 let arr1 = [10, 20, 30];
 let iterator = arr1[Symbol.iterator](); // Acessando o iterador do array
 
+for(let i of iterator){
+   console.log(i)
+}
+
 console.log(iterator.next()); // { value: 10, done: false }
 console.log(iterator.next()); // { value: 20, done: false }
 console.log(iterator.next()); // { value: 30, done: false }
 console.log(iterator.next()); // { value: undefined, done: true }
+
 
 // Cada vez que chamamos iterator.next(), ele nos dá o próximo valor do array e nos diz se o loop terminou (done: true).
 
@@ -143,3 +148,37 @@ console.log(entriesIterator.next()); // { value: [0, 'a'], done: false } -> índ
 console.log(entriesIterator.next()); // { value: [1, 'b'], done: false } -> índice 1, valor 'b'
 console.log(entriesIterator.next()); // { value: [2, 'c'], done: false } -> índice 2, valor 'c'
 console.log(entriesIterator.next()); // { value: undefined, done: true } -> terminou
+
+// Metodo fill()
+
+// O método fill() em JavaScript é utilizado para preencher todos os elementos de um array com um valor específico, do início ao fim. Ele modifica o array original, substituindo os valores existentes pelo valor que você especificar.
+
+const  nomes = Array(5).fill('binho') //Array(5): Eu estou criando um array com 5 posições. Nesse momento, ele não tem nenhum valor dentro, apenas espaços vazios. Ele está assim:
+
+// .fill('binho'): O método fill() entra em ação. Ele vai pegar todas essas 5 posições vazias e vai preencher cada uma delas com o valor 'binho'. Então o array fica assim:
+
+for(let i of nomes){
+   console.log(i)
+}
+
+
+//Metodo sort
+
+const n = [1,2,3,4,5,6,7,8,9,10,11,45,23,58];
+
+console.log(n.reverse())
+
+const copare = n.sort((a,b)=>{
+   return a - b
+})
+console.log(copare)
+
+const Nomes = ['binho', 'fabio ','Ana', 'ana','carla','maria','soraia']
+
+const ord = Nomes.sort((a,b)=>{
+ return  a.localeCompare(b)  
+})
+console.log(ord)
+
+
+ 
