@@ -100,20 +100,7 @@
 
 
 // Resolvendo  problemas usando pilha
-class Pilha {
-    constructor(){
-        this.item = []
-    }
-    push(ele){
-        this.item.push(ele)
-    }
-    isEmpty(){
-        return this.item.length === 0
-    }
-    pop(){
-        return this.item.pop();
-    }
-}
+
 // function decimaBinario(n){
 //     const remPilha = new Pilha();
 //     let number = n;
@@ -123,9 +110,9 @@ class Pilha {
 //         rem = Math.floor(number % 2)
 //         remPilha.push(rem)
 //         number = Math.floor(number / 2)
-//         console.log(rem)
+// 
 //     }
-//     while(!remPilha. isEmpty()){
+//     while(!remPilha.isEmpty()){
 //      binaryString+=remPilha.pop().toString()
 
 //     }
@@ -138,24 +125,115 @@ class Pilha {
 
 //Conversor de base
 
-function baseConversor(decimal , base){
-    const remPilha = new Pilha();
-    const digits = '0123456789ABCDEFGHIJKMNOPQRSTUVWXYZ';
-    let number = decimal;
-    let rem;
-    let baseSring = '';
-    if(!(base >= 2 && base<= 36)){
-        return '';
-    }
-    while(number > 0){
-        rem = Math.floor(number % base);
-        remPilha.push(rem);
-        number = Math.floor(number/ base)
-    }
-    while(!remPilha.isEmpty()){
-        baseSring+= digits[remPilha.pop()]
-    }
-    return baseSring
-}
-console.log(baseConversor(100345, 15))
+// function baseConversor(decimal , base){
+//     const remPilha = new Pilha();
+//     const digits = '0123456789ABCDEFGHIJKMNOPQRSTUVWXYZ';
+//     let number = decimal;
+//     let rem;
+//     let baseSring = '';
+//     if(!(base >= 2 && base<= 36)){
+//         return '';
+//     }
+//     while(number > 0){
+//         rem = Math.floor(number % base);
+//         remPilha.push(rem);
+//         number = Math.floor(number/ base)
+//     }
+//     while(!remPilha.isEmpty()){
+//         baseSring+= digits[remPilha.pop()]
+//     }
+//     return baseSring
+// }
+// console.log(baseConversor(100345, 16))
 
+// FILAS//
+
+
+
+
+class Filas {
+    constructor() {
+        // Inicializa a contagem de elementos na fila.
+        this.count = 0;
+        // Mantém o controle do índice do primeiro elemento da fila.
+        this.lowesCount = 0;
+        // Objeto que irá armazenar os elementos da fila.
+        this.items = {};
+    }
+
+    // Adiciona um elemento no final da fila.
+    enqueue(element) {
+        // Armazena o elemento no índice atual de count.
+        this.items[this.count] = element;
+        // Incrementa o count para refletir o novo tamanho da fila.
+        this.count++;
+    }
+
+    // Remove e retorna o primeiro elemento da fila.
+    dequeue() {
+        // Verifica se a fila está vazia.
+        if (this.isEmpty()) {
+            return undefined;  // Retorna indefinido se a fila estiver vazia.
+        }
+        // Armazena o primeiro elemento da fila (na posição lowesCount).
+        const result = this.items[this.lowesCount];
+        // Remove o primeiro elemento da fila.
+        delete this.items[this.lowesCount];
+        // Incrementa lowesCount para apontar para o próximo item.
+        this.lowesCount++;
+        // Retorna o elemento removido.
+        return result;
+    }
+
+    // Retorna o primeiro elemento da fila sem removê-lo.
+    peek() {
+        // Verifica se a fila está vazia.
+        if (this.isEmpty()) {
+            return undefined;  // Retorna indefinido se estiver vazia.
+        }
+        // Retorna o primeiro elemento sem remover.
+        return this.items[this.lowesCount];
+    }
+
+    // Verifica se a fila está vazia.
+    isEmpty() {
+        // Retorna true se a fila não tiver elementos.
+        return this.count - this.lowesCount === 0;
+    }
+
+    // Retorna o tamanho atual da fila.
+    size() {
+        // O tamanho é dado pela diferença entre count e lowesCount.
+        return this.count - this.lowesCount;
+    }
+
+    // Remove todos os elementos da fila.
+    clear() {
+        // Reseta os valores para os iniciais.
+        this.items = {};
+        this.count = 0;
+        this.lowesCount = 0;
+    }
+
+    // Retorna uma string com todos os elementos da fila.
+    toString() {
+        // Verifica se a fila está vazia.
+        if (this.isEmpty()) {
+            return '';  // Retorna string vazia se não houver elementos.
+        }
+        // Inicia a string com o primeiro elemento da fila.
+        let objString = `${this.items[this.lowesCount]}`;
+        // Itera sobre os elementos restantes e adiciona à string.
+        for (let i = this.lowesCount + 1; i < this.count; i++) {
+            objString = `${objString},${this.items[i]}`;
+        }
+        // Retorna a string com os elementos separados por vírgulas.
+        return objString;
+    }
+}
+
+// Testando a fila
+const f = new Filas();
+f.enqueue('ddd');  // Adiciona 'ddd' à fila.
+f.enqueue('vvv');  // Adiciona 'vvv' à fila.
+console.log(f.toString());  // Exibe os elementos da fila como uma string: "ddd,vvv".
