@@ -151,89 +151,151 @@
 
 
 
-class Filas {
-    constructor() {
-        // Inicializa a contagem de elementos na fila.
-        this.count = 0;
-        // Mantém o controle do índice do primeiro elemento da fila.
-        this.lowesCount = 0;
-        // Objeto que irá armazenar os elementos da fila.
-        this.items = {};
-    }
+// class Filas {
+//     constructor() {
+//         // Inicializa a contagem de elementos na fila.
+//         this.count = 0;
+//         // Mantém o controle do índice do primeiro elemento da fila.
+//         this.lowesCount = 0;
+//         // Objeto que irá armazenar os elementos da fila.
+//         this.items = {};
+//     }
 
-    // Adiciona um elemento no final da fila.
-    enqueue(element) {
-        // Armazena o elemento no índice atual de count.
-        this.items[this.count] = element;
-        // Incrementa o count para refletir o novo tamanho da fila.
-        this.count++;
-    }
+//     // Adiciona um elemento no final da fila.
+//     enqueue(element) {
+//         // Armazena o elemento no índice atual de count.
+//         this.items[this.count] = element;
+//         // Incrementa o count para refletir o novo tamanho da fila.
+//         this.count++;
+//     }
 
-    // Remove e retorna o primeiro elemento da fila.
-    dequeue() {
-        // Verifica se a fila está vazia.
-        if (this.isEmpty()) {
-            return undefined;  // Retorna indefinido se a fila estiver vazia.
-        }
-        // Armazena o primeiro elemento da fila (na posição lowesCount).
-        const result = this.items[this.lowesCount];
-        // Remove o primeiro elemento da fila.
-        delete this.items[this.lowesCount];
-        // Incrementa lowesCount para apontar para o próximo item.
-        this.lowesCount++;
-        // Retorna o elemento removido.
-        return result;
-    }
+//     // Remove e retorna o primeiro elemento da fila.
+//     dequeue() {
+//         // Verifica se a fila está vazia.
+//         if (this.isEmpty()) {
+//             return undefined;  // Retorna indefinido se a fila estiver vazia.
+//         }
+//         // Armazena o primeiro elemento da fila (na posição lowesCount).
+//         const result = this.items[this.lowesCount];
+//         // Remove o primeiro elemento da fila.
+//         delete this.items[this.lowesCount];
+//         // Incrementa lowesCount para apontar para o próximo item.
+//         this.lowesCount++;
+//         // Retorna o elemento removido.
+//         return result;
+//     }
 
-    // Retorna o primeiro elemento da fila sem removê-lo.
-    peek() {
-        // Verifica se a fila está vazia.
-        if (this.isEmpty()) {
-            return undefined;  // Retorna indefinido se estiver vazia.
-        }
-        // Retorna o primeiro elemento sem remover.
-        return this.items[this.lowesCount];
-    }
+//     // Retorna o primeiro elemento da fila sem removê-lo.
+//     peek() {
+//         // Verifica se a fila está vazia.
+//         if (this.isEmpty()) {
+//             return undefined;  // Retorna indefinido se estiver vazia.
+//         }
+//         // Retorna o primeiro elemento sem remover.
+//         return this.items[this.lowesCount];
+//     }
 
-    // Verifica se a fila está vazia.
-    isEmpty() {
-        // Retorna true se a fila não tiver elementos.
-        return this.count - this.lowesCount === 0;
-    }
+//     // Verifica se a fila está vazia.
+//     isEmpty() {
+//         // Retorna true se a fila não tiver elementos.
+//         return this.count - this.lowesCount === 0;
+//     }
 
-    // Retorna o tamanho atual da fila.
-    size() {
-        // O tamanho é dado pela diferença entre count e lowesCount.
-        return this.count - this.lowesCount;
-    }
+//     // Retorna o tamanho atual da fila.
+//     size() {
+//         // O tamanho é dado pela diferença entre count e lowesCount.
+//         return this.count - this.lowesCount;
+//     }
 
-    // Remove todos os elementos da fila.
-    clear() {
-        // Reseta os valores para os iniciais.
-        this.items = {};
-        this.count = 0;
-        this.lowesCount = 0;
-    }
+//     // Remove todos os elementos da fila.
+//     clear() {
+//         // Reseta os valores para os iniciais.
+//         this.items = {};
+//         this.count = 0;
+//         this.lowesCount = 0;
+//     }
 
-    // Retorna uma string com todos os elementos da fila.
-    toString() {
-        // Verifica se a fila está vazia.
-        if (this.isEmpty()) {
-            return '';  // Retorna string vazia se não houver elementos.
-        }
-        // Inicia a string com o primeiro elemento da fila.
-        let objString = `${this.items[this.lowesCount]}`;
-        // Itera sobre os elementos restantes e adiciona à string.
-        for (let i = this.lowesCount + 1; i < this.count; i++) {
-            objString = `${objString},${this.items[i]}`;
-        }
-        // Retorna a string com os elementos separados por vírgulas.
-        return objString;
-    }
-}
+//     // Retorna uma string com todos os elementos da fila.
+//     toString() {
+//         // Verifica se a fila está vazia.
+//         if (this.isEmpty()) {
+//             return '';  // Retorna string vazia se não houver elementos.
+//         }
+//         // Inicia a string com o primeiro elemento da fila.
+//         let objString = `${this.items[this.lowesCount]}`;
+//         // Itera sobre os elementos restantes e adiciona à string.
+//         for (let i = this.lowesCount + 1; i < this.count; i++) {
+//             objString = `${objString},${this.items[i]}`;
+//         }
+//         // Retorna a string com os elementos separados por vírgulas.
+//         return objString;
+//     }
+// }
 
 // Testando a fila
-const f = new Filas();
-f.enqueue('ddd');  // Adiciona 'ddd' à fila.
-f.enqueue('vvv');  // Adiciona 'vvv' à fila.
-console.log(f.toString());  // Exibe os elementos da fila como uma string: "ddd,vvv".
+// const f = new Filas();
+// f.enqueue('BINHO');  // Adiciona 'ddd' à fila.
+// f.enqueue('SELMA');
+// f.enqueue('Carlos') // Adiciona 'vvv' à fila.
+// f.peek()
+// console.log(f.toString());  // Exibe os elementos da fila como uma string: "ddd,vvv".
+// console.log(f.peek()) 
+// console.log(f.isEmpty())
+
+
+// Estrututura de dados de deque
+
+class Deque{
+    constructor(){
+        this.iten = {}
+        this.cont = 0;
+        this.start = 0;
+    }
+    enqueue(ele){
+        this.iten[this.cont]=ele;
+        this.cont++;
+    }
+    dequeue(){
+        if(this.isEmpty()){
+            return undefined
+        }
+        const remove = this.iten[this.start]
+        delete this.iten[this.start]
+        this.start++
+        return remove
+    }
+    isEmpty() {
+        // Retorna true se a fila não tiver elementos.
+        return this.cont - this.start === 0;
+    }
+    size(){
+        return this.cont - this.start
+    }
+    clear(){
+        this.iten = {}
+        this.cont = 0;
+        this.start = 0;
+    }
+    toString(){
+        if(this.isEmpty()){
+            return '';
+        }
+        let stringObj = `${this.iten[this.start]}`;
+        this.control= 0
+        for(let i = this.control+ 1; i<this.cont; i++){
+              stringObj=`${stringObj},${this.iten[i]}`; 
+        }
+        return stringObj
+     }
+}
+
+
+const d = new Deque
+
+d.enqueue('binho')
+d.enqueue('carla')
+d.toString()
+console.log(d.toString())
+
+console.log(d.size())
+console.log(d)
