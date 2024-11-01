@@ -264,6 +264,22 @@ class Deque{
         this.start++
         return remove
     }
+    addFront(ele){
+        if(this.isEmpty()){
+            this.enqueue(ele)
+        }else if(this.start > 0){ // Verificação se Existe Espaço Antes do Início
+            this.start--
+            this.iten[this.start]=ele;
+        }else{
+            for(let i = this.cont; i>0; i--){
+               this.iten[i] = this.items[i-1]
+            }
+            this.cont++
+            this.start = 0;
+            this.iten[0] = ele
+        }
+
+    }
     isEmpty() {
         // Retorna true se a fila não tiver elementos.
         return this.cont - this.start === 0;
@@ -283,7 +299,7 @@ class Deque{
         let stringObj = `${this.iten[this.start]}`;
         this.control= 0
         for(let i = this.control+ 1; i<this.cont; i++){
-              stringObj=`${stringObj},${this.iten[i]}`; 
+              stringObj+=`${this.iten[i]}`; 
         }
         return stringObj
      }
