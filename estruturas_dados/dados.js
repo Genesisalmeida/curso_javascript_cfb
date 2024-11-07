@@ -251,11 +251,11 @@ class Deque{
         this.cont = 0;
         this.start = 0;
     }
-    enqueue(ele){
+    addBack(ele){
         this.iten[this.cont]=ele;
         this.cont++;
     }
-    dequeue(){
+    removeFront(){
         if(this.isEmpty()){
             return undefined
         }
@@ -263,6 +263,16 @@ class Deque{
         delete this.iten[this.start]
         this.start++
         return remove
+    }
+    
+    removeBack() {
+        if (this.isEmpty()) {
+            return "A pilha está vazia"; // Retorna mensagem se a pilha estiver vazia
+        }
+        this.cont--; // Decrementa a contagem
+        const removed = this.iten[this.cont]; // Obtém o elemento removido
+        delete this.iten[this.cont]; // Remove o elemento do objeto
+        return removed; // Retorna o elemento removido
     }
     addFront(ele){
         if(this.isEmpty()){
@@ -272,7 +282,7 @@ class Deque{
             this.iten[this.start]=ele;
         }else{
             for(let i = this.cont; i>0; i--){
-               this.iten[i] = this.items[i-1]
+               this.iten[i] = this.iten[i-1]
             }
             this.cont++
             this.start = 0;
@@ -299,7 +309,7 @@ class Deque{
         let stringObj = `${this.iten[this.start]}`;
         this.control= 0
         for(let i = this.control+ 1; i<this.cont; i++){
-              stringObj+=`${this.iten[i]}`; 
+              stringObj+=` ${this.iten[i]}`; 
         }
         return stringObj
      }
@@ -308,9 +318,15 @@ class Deque{
 
 const d = new Deque
 
-d.enqueue('binho')
-d.enqueue('carla')
+d.addBack('binho')
+d.addBack('carla')
+d.addBack('carlos')
+d.addBack('maria')
+d.addFront('LUCASSSS')
 d.toString()
+
+d.toString()
+
 console.log(d.toString())
 
 console.log(d.size())
