@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 15px;
+}
+.obj{
+   display: flex;
+   background-color:#d6d6d6 ;
+   flex-direction: column;
+   align-items: center;
+   width: 90vw;
+   margin-top: 25px;
+   margin: auto;
+   border: 3px solid #696767; 
+}
+.computador{
+    display: flex;
+    justify-content: center;
+    width: 10vw;
+    align-items: center;
+    border: 1px solid black;
+    background-color: #fff;
+}

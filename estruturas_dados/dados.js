@@ -245,89 +245,89 @@
 
 // Estrututura de dados de deque
 
-class Deque{
-    constructor(){
-        this.iten = {}
-        this.cont = 0;
-        this.start = 0;
-    }
-    addBack(ele){
-        this.iten[this.cont]=ele;
-        this.cont++;
-    }
-    removeFront(){
-        if(this.isEmpty()){
-            return undefined
-        }
-        const remove = this.iten[this.start]
-        delete this.iten[this.start]
-        this.start++
-        return remove
-    }
+// class Deque{
+//     constructor(){
+//         this.iten = {}
+//         this.cont = 0;
+//         this.start = 0;
+//     }
+//     addBack(ele){
+//         this.iten[this.cont]=ele;
+//         this.cont++;
+//     }
+//     removeFront(){
+//         if(this.isEmpty()){
+//             return undefined
+//         }
+//         const remove = this.iten[this.start]
+//         delete this.iten[this.start]
+//         this.start++
+//         return remove
+//     }
     
-    removeBack() {
-        if (this.isEmpty()) {
-            return "A pilha está vazia"; // Retorna mensagem se a pilha estiver vazia
-        }
-        this.cont--; // Decrementa a contagem
-        const removed = this.iten[this.cont]; // Obtém o elemento removido
-        delete this.iten[this.cont]; // Remove o elemento do objeto
-        return removed; // Retorna o elemento removido
-    }
-    addFront(ele){
-        if(this.isEmpty()){
-            this.enqueue(ele)
-        }else if(this.start > 0){ // Verificação se Existe Espaço Antes do Início
-            this.start--
-            this.iten[this.start]=ele;
-        }else{
-            for(let i = this.cont; i>0; i--){
-               this.iten[i] = this.iten[i-1]
-            }
-            this.cont++
-            this.start = 0;
-            this.iten[0] = ele
-        }
+//     removeBack() {
+//         if (this.isEmpty()) {
+//             return "A pilha está vazia"; // Retorna mensagem se a pilha estiver vazia
+//         }
+//         this.cont--; // Decrementa a contagem
+//         const removed = this.iten[this.cont]; // Obtém o elemento removido
+//         delete this.iten[this.cont]; // Remove o elemento do objeto
+//         return removed; // Retorna o elemento removido
+//     }
+//     addFront(ele){
+//         if(this.isEmpty()){
+//             this.enqueue(ele)
+//         }else if(this.start > 0){ // Verificação se Existe Espaço Antes do Início
+//             this.start--
+//             this.iten[this.start]=ele;
+//         }else{
+//             for(let i = this.cont; i>0; i--){
+//                this.iten[i] = this.iten[i-1]
+//             }
+//             this.cont++
+//             this.start = 0;
+//             this.iten[0] = ele
+//         }
 
-    }
-    isEmpty() {
-        // Retorna true se a fila não tiver elementos.
-        return this.cont - this.start === 0;
-    }
-    size(){
-        return this.cont - this.start
-    }
-    clear(){
-        this.iten = {}
-        this.cont = 0;
-        this.start = 0;
-    }
-    toString(){
-        if(this.isEmpty()){
-            return '';
-        }
-        let stringObj = `${this.iten[this.start]}`;
-        this.control= 0
-        for(let i = this.control+ 1; i<this.cont; i++){
-              stringObj+=` ${this.iten[i]}`; 
-        }
-        return stringObj
-     }
-}
+//     }
+//     isEmpty() {
+//         // Retorna true se a fila não tiver elementos.
+//         return this.cont - this.start === 0;
+//     }
+//     size(){
+//         return this.cont - this.start
+//     }
+//     clear(){
+//         this.iten = {}
+//         this.cont = 0;
+//         this.start = 0;
+//     }
+//     toString(){
+//         if(this.isEmpty()){
+//             return '';
+//         }
+//         let stringObj = `${this.iten[this.start]}`;
+//         this.control= 0
+//         for(let i = this.control+ 1; i<this.cont; i++){
+//               stringObj+=` ${this.iten[i]}`; 
+//         }
+//         return stringObj
+//      }
+// }
 
 
-const d = new Deque
+// const d = new Deque
 
-d.addBack('binho')
-d.addBack('carla')
-d.addBack('carlos')
-d.addBack('maria')
-d.addFront('LUCASSSS')
-d.toString()
+// d.addBack('binho')
+// d.addBack('carla')
+// d.addBack('carlos')
+// d.addBack('maria')
+// d.addFront('LUCASSSS')
+// d.toString()
 
-d.toString()
+// d.toString()
 
-console.log(d.toString())
+// console.log(d.toString())
 
-console.log(d.size())
-console.log(d)
+// console.log(d.size())
+// console.log(d)
