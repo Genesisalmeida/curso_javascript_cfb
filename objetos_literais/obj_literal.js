@@ -50,3 +50,9 @@ const obj = document.querySelector(".obj");
     obj.appendChild(div)
  
  })
+ // Clonando objetos //
+ const c = Object.assign({},computadores) // object.assign serve para clonar os obj
+
+ delete(computadores[0].cpu) // Como deletar um obj
+
+ 
