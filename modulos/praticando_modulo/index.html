@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando Módulo</title>
+    <style>
+        .contanier{
+            display: flex;
+            flex-direction: column;
+        }
+        .formulario{
+            display: flex;
+            flex-direction: column;
+            background-color: antiquewhite;
+            margin: auto;
+            padding:15px 15px 0px;
+            width: 15vw;
+            height: 22vh;
+            border: 1px solid black;
+        }
+        label{
+              font-weight: 600;
+        }
+       input{
+            width:13vw;
+            border-radius:8px;
+            
+        }
+        #butt{
+            cursor: pointer;
+            width: 5vw;
+            margin: auto;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        .result{
+            border: 3px solid rgb(95, 95, 95);
+            margin-top: 20px;
+
+        }
+        .contato{
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            padding: 5px;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="contanier">
+        <div class="formulario">
+       <label for="nome">Nome</label>
+            <input type="text" id="nome">
+        <label for="telefone">Telefone</label> 
+            <input type="number" id="telefone">
+         <label for="email" > Email</label> 
+            <input type="email" id="email">
+        <button id="butt">gravar</button>
+        </div>        
+    </div>
+    <div class="listaContato">
+    </div>
+
+    <script src="arq.js" type="module"></script>
+</body>
+</html>
