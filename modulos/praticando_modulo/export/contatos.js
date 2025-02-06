@@ -1,5 +1,4 @@
 import {contatos} from "./bancoContatos.js";
-console.log(contatos)
 let contato = {
     getTodoscontatos:function(){
         return contatos
