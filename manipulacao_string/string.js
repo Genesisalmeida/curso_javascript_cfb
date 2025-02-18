@@ -34,12 +34,21 @@
 // console.log(nome.split('g') )// Divide a string em um array, separando pelo caractere 'e'O método .split(separador) divide a string onde encontra o separador e retorna um array com as partes..
 
 
-let nome ='genesis';
-console.log(nome.substring(0,6)) // substring serve para retornar o valor da string,passamos a posição incio '0' e fim (ex|:'6'),lembrando que para retornar a string completa, temos que passar uma posição a mais no fim,pois ele retorna ate a posição passada
-console.log(nome.toUpperCase())//Converte para maiusculo;
-console.log(nome.toLowerCase())// Converte para menusculo
+// let nome ='genesis';
+// console.log(nome.substring(0,6)) // substring serve para retornar o valor da string,passamos a posição incio '0' e fim (ex|:'6'),lembrando que para retornar a string completa, temos que passar uma posição a mais no fim,pois ele retorna ate a posição passada
+// console.log(nome.toUpperCase())//Converte para maiusculo;
+// console.log(nome.toLowerCase())// Converte para menusculo
 
-let num= 10
-console.log(typeof(num))
-num=num.toString() // fazendo a conversão do numero para 
-console.log(typeof(num))
+// let num= 10
+// console.log(typeof(num))
+// num=num.toString() // fazendo a conversão do numero para 
+// console.log(typeof(num))
+
+
+// aula 2 string
+
+let nome = 'genesi souza almeida';
+console.log(nome.startsWith("gene"))// verifica se a string inicia pelo o valor indicado "(ex:gene,pode ser somente a primeira string)",retornando true ou false.
+console.log(nome.endsWith("alme"))//verifica se a string termina pelo o valor indicado "(ex:alme)",retornando true ou false.
+console.log(nome.includes('ge'))//O método .includes() em JavaScript verifica se uma string contém uma determinada sequência de caracteres
+console.log(nome.repeat(3))// repete a string,passamos o valor '3' ela vai se repetir de acordo com o valor passado.s
