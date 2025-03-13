@@ -29,30 +29,51 @@
 const car = document.querySelector('.carro');
 const stope = document.querySelector('#stop');  
 const btn_di = document.querySelector('#bt_dire');
-const btn_esq = document.querySelector('#bt_esq');   
-let anima = null
-const init= ()=>{
-    car.style=`position:relative;left:0px`;
+const btn_esq = document.querySelector('#bt_esq');
+const btn_meio = document.querySelector('#bt_meio')   
+let anima = null;
+let tamax = null;
+
+function init() {
+  car.style.position = "relative";
+  car.style.left = "0px";
+  car.style.width = "100px";
+  tamax = window.innerWidth - car.offsetWidth;
 }
 
-const mover=(dir)=>{
-  car.style.left = parseInt(car.style.left) + (10*dir) +"px";
-}
+const mover = (dir) => {
+  if (dir > 0) {
+    if (parseInt(car.style.left) <= tamax) {
+      car.style.left = parseInt(car.style.left) + (10 * dir) + "px";
+    }
+  } else if (dir < 0) {
+    if (parseInt(car.style.left) >= 0) {
+      car.style.left = parseInt(car.style.left) + (10 * dir) + "px";
+    }
+  }
+};
 
-btn_di.addEventListener('click',()=>{
-    clearInterval(anima)
-       anima = setInterval(mover,200,1)
+// Eventos dos botões
+btn_di.addEventListener('click', () => {
+  clearInterval(anima);
+  anima = setInterval(() => mover(1), 20);
+});  
 
-    })  
+btn_esq.addEventListener('click', () => {
+  clearInterval(anima);
+  anima = setInterval(() => mover(-1), 20);
+});
 
-btn_esq.addEventListener('click',()=>{
-      clearInterval(anima)
-       anima = setInterval(mover,200,-1)
-    })
+stope.addEventListener('click', () => {
+  clearInterval(anima);
+});
 
-stope.addEventListener('click',()=>{
-      clearInterval(anima) //limpar intervalo
-   
-   })
 
- window.onload=init;
+// Evento de redimensionamento da tela
+window.addEventListener("resize", () => {
+  tamax = window.innerWidth - car.offsetWidth;
+});
+
+// Inicialização ao carregar a página
+window.onload = init;
+
