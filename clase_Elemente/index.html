@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula função getBoundingClientRecti</title>
+    <style>
+        .info{
+            display: flex;
+            justify-content: space-around;
+        }
+        .quadrado{
+            position: absolute;
+            display: flex;
+            width: 100px;
+            height: 100px;
+        }
+        .caixa{
+            position: absolute;
+            display: flex;
+            width: 100px;
+            height: 100px;
+        }
+        #q1{
+            background-color: #f00;
+            
+            left: 100px;
+        }
+        #q2{
+            background-color: blue;
+           border-radius: 150px;
+            left: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div  id="info" class="info">
+        <p id="posx">poxs:</p>
+        <p id="posy">posy:</p>
+        <p id="largura">largura:</p>
+        <p id="altura">altura:</p>
+    </div>
+    <div id="q1" class="quadrado"></div>
+    <div id="q2" class="caixa"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

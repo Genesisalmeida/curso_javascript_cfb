@@ -126,10 +126,12 @@ window.addEventListener("keydown",(evt)=>{
   if(evt.code==='ArrowUp'){
     car.style.width = parseInt(car.style.width=`${tamcar +10}px`)
     car.style.width = parseInt(car.style.height=`${tamcar +10}px`)
+    car.style.backgroundColor = corAleatoria() 
   }
    if(evt.code==='ArrowDown'){
     car.style.width = parseInt(car.style.width=`${tamcar - 10}px`)
     car.style.width = parseInt(car.style.height=`${tamcar - 10}px`)
+    car.style.backgroundColor = corAleatoria() 
   }
   tamcar=parseInt(car.style.width)
   tamax = window.innerWidth - car.offsetWidth;
