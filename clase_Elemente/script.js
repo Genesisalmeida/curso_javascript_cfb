@@ -44,6 +44,7 @@ q2.addEventListener('click', (evt) => {
 
 
 //Classe Elemente//
+        
 q1.accessKey='b';  
 q2.accessKey='n';
 //Essas duas linhas de código definem acessos rápidos (ou "atalhos de teclado") para os elementos q1 e q2 usando a propriedade accessKey. Vou explicar em detalhes:
