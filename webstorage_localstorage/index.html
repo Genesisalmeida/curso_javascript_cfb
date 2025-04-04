@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webstorage-Localstorage-SessionStorage</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100vw;
+             
+        }
+        #but{
+            background-color: aqua;
+            border: 2px solid rgb(104, 113, 113);
+            padding: 5px;
+            border-radius: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #texto{
+            width: 200px;
+            height: 30px;
+            border: 2px solid rgb(104, 113, 113);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bem vindo</h1>
+        <br>
+        <input type="text" nome="texto" id="texto">
+        <br>
+        <p id="p_texto"></p>
+        <button id="but">webStorage</button>
+    </div>
+   
+    <script src="webstorage.js"></script>
+</body>
+</html>
