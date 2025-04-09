@@ -1,0 +1,33 @@
+.container{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid #8a878a ;
+    border-radius: 10px;
+    background-color: #2e2e2e;
+    padding: 20px;
+    width: 15vw;
+    height: 15vh;
+}
+#timer{
+    margin: auto;
+   border: 5px solid #8a878a; 
+   background-color: black;
+   color: #14751f;
+   font-size: 40px;
+   border-radius: 10px;
+   text-align: center;
+   padding:10px;
+   width: 180px;
+}
+
+#go{
+    background-color: black;
+    border: 5px solid #8a878a;
+    border-radius: 10px;
+    color: #14751f;
+    width: 100px;
+    padding: 8px;
+}

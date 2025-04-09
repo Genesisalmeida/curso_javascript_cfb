@@ -63,9 +63,10 @@ const raca = document.querySelector('#raca')
 const grupoRaca  = document.querySelector('#g_raca')
 const espectativaVida  = document.querySelector('#e_vida')
 const temperamento = document.querySelector('#temperamento')
+const div = document.querySelector('.container')
 let controle
 
-const div = document.querySelector('.container')
+
 const headers = new Headers({
     "Content-Type": "application/json",
     "x-api-key": "DEMO-API-KEY"
@@ -78,18 +79,30 @@ const headers = new Headers({
   };
   const http ="https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1";
 
-
+async function pegarDado(){
+  try{
+    const resposta = await fetch(http,
+      {
+      headers:{"Content-type": "application/json", 
+      "x-api-key":"DEMO-API-KEY" // chave da api
+    }});
+    const dados = await resposta.json();
+    dogData(dados)
+  }catch(erro){
+    console.log('Erro na requisição', erro)
+  }
+}
   
-fetch(http, requestOptions)
-    .then(response => response.json())
-    .then(resut=>dogData(resut))
-    .catch(error => console.log('error', error))
+// fetch(http, requestOptions)
+//     .then(response => response.json())
+//     .then(resut=>dogData(resut))
+//     .catch(error => console.log('error', error))
  
   
 
 
     const dogData=(resut)=>{
-        // console.log( resut[0].breeds[0])
+        
        grupoRaca.innerHTML =`Grupo da raça: ${ resut[0].breeds[0].breed_group}`;
        if(grupoRaca == undefined){
             grupoRaca.innerHTML ='Grupo não indetificado';
@@ -112,7 +125,7 @@ fetch(http, requestOptions)
     }
     but.addEventListener('click',()=>{
        
-            location.reload(); // Recarrega a página
+       location.reload(   ); // Recarrega a página
          
-    })
-   
+    });
+pegarDado()
