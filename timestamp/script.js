@@ -1,3 +1,5 @@
+import { Cxmsg } from "../projeto_caixa-msg/cxmsg.js";
+
 const p = document.querySelector('#timer');
 const b = document.querySelector('#go');
 const stp = document.querySelector('#zerar');
@@ -43,7 +45,7 @@ stp.addEventListener('click', () => {
     tempoPausado = 0;
     timestamp = null;
     box.innerHTML= '<p> Parciais </p> '
- 
+  Cxmsg.mostrar('Cronômetro','O Cronômetro foi zerado')
 
 });
 
