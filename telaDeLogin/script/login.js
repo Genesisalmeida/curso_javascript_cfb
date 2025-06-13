@@ -1,22 +1,33 @@
+
+// import{ Cxmsg }from"../../projeto_caixa-msg/cxmsg.js"   
+
 class Login{
+    
     static logado = false;
     static matlogado = null;
     static nomelogado = null;
     static acessologado = null;
     static styleCss = null;
-    static elem = document.querySelector(".logoLogin")
+    static callbackok = null;
+    static callbacknaook = null;
     static configu = {
         cor:"#1b2a41",
         img:"assets/img/imgteste.avif"
     }
-    static endpoint = "https://31d8b925-8e39-4cd3-94c5-8309c71b769b-00-2284hqe55rgzq.worf.replit.dev/";
-    //https://loginv1.cfbcursos.rpl.co/?matricula=123$senha=321
-    static login=(mat,pas,config=null)=>{
+    static endpoint = "https://b91844b7-11c0-44d6-8dab-24060a065b41-00-296o7qsd53am2.picard.replit.dev/";
+
+    
+    static login=(callbackok,callbacknaook,config=null)=>{
         if (config!=null) {
             this.configu.cor = config.cor;
         }
-    
-    this.endpoint+=`?matricula=${mat}&senha=${pas}`
+        this.callbackok=()=>{
+            callbackok()
+        }
+        this.callbacknaook=()=>{
+            callbacknaook()
+        }
+
         this.styleCss = `
         *{
             margin: 0;
@@ -46,7 +57,7 @@ class Login{
             background-color: #eee;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
             padding: 10px;
             border-radius: 10px 0px 0px 10px;
             width: 50%;
@@ -80,7 +91,7 @@ class Login{
         .botoesLogin{
             display: flex;
             justify-content: space-around;
-            padding: 10px;
+            padding: 0px 30px 10px;
             align-items: center;
             width: 100%;
         }
@@ -97,7 +108,7 @@ class Login{
             border-radius:30%;
         }`
 
-
+    
 const style = document.createElement("style");
 style.setAttribute("rel","stylesheet");
 style.setAttribute("id","id_estiloLogin");
@@ -158,39 +169,65 @@ elementosLogin.appendChild(botoesLogin)
 
 const btn = document.createElement("button");
 btn.setAttribute("id","btn_login");
-btn.innerHTML="Login"
+btn.innerHTML="Login";
+
+btn.addEventListener('click',()=>{
+    this.verificaLogin()
+})
+
 botoesLogin.appendChild(btn);
 
-const btn2 = document.createElement("button");
-btn2.setAttribute("id","btn_cancelar");
-btn2.innerHTML="Cancelar";
-botoesLogin.appendChild(btn2);
+const btnCance = document.createElement("button");
+btnCance.setAttribute("id","btn_cancelar");
+btnCance.innerHTML="Cancelar";
+btnCance.addEventListener('click',()=>{
+ this.fechar();
+})
+botoesLogin.appendChild(btnCance);
+
+const logoLogin = document.createElement("div");
+logoLogin.setAttribute("id","logoLogin");
+logoLogin.setAttribute("class","logoLogin")
+baseLogin.appendChild(logoLogin)
+
+const img = document.createElement("img");
+img.setAttribute("src",this.configu.img); 
+img.setAttribute("alt","CFBCursos")
+logoLogin.appendChild(img);
+
+}
+
+        static verificaLogin=()=>{
 
 
-
-// //config img
-
-// const img = document.createElement("img");
-// img.setAttribute("src",this.configu.img); 
-// img.setAttribute("alt","CFBCursos")
-// this.elem.append(img);
-
-
-
-         fetch(this.endpoint)
-         .then(res=>res.json())
-         .then(res=>{
-            if(res){
-                this.logado = true;
-                this.matlogado = mat;
-                this.acessologado=res.acesso;
-                    console.log(res);
+            let mat = document.querySelector("#f_username").value
+            let  pas =document.querySelector("#f_senha").value;
+  
+            const endpoint =`https://31d8b925-8e39-4cd3-94c5-8309c71b769b-00-2284hqe55rgzq.worf.replit.dev/?matricula=${mat}&senha=${pas}`
+            fetch(endpoint)
+            .then(res=>res.json())
+            .then(res=>{
+                if(res){
+                    this.logado=true;
+                    this.matlogado=mat;
+                    this.nomelogado=res.nome;
+                    this.acessologado=res.acesso;
+                    this.callbackok();
+                    this.fechar();
                 }else{
-                    console.log('Usuário não encontrado')
+                    this.callbacknaook();
                 }
-            }
-         )}
-
+            })
+        }
+           
+    
+        static  fechar=()=>{
+            const fundoLongin=document.querySelector("#Flogin");
+            fundoLongin.remove();
+            const id_estiloLogin=document.querySelector("#id_estiloLogin");
+            id_estiloLogin.remove();
+        }       
     }
 
-export{Login}
+
+export{Login};

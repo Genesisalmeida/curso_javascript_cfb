@@ -4,140 +4,139 @@ class Cxmsg {
     static divmsg = null;
     static tipo = null;
     static comando_sn = null;
-    static textos =[]
+    static textos = [];
 
-
-    static mostrar = (config,eltitulo, texto) => {
-        this.cor=config.cor;
-        this.tipo = config.tipo;
-        this.textos = config.textos
-        this.comando_sn = ()=>{config.comando_sn()};
+    static mostrar = (config, eltitulo, texto) => {
+        this.cor = config.cor || "#ccc";
+        this.tipo = config.tipo || "ok";
+        this.textos = config.textos || ["Sim", "Não"];
+        this.comando_sn = config.comando_sn || (() => {});
         this.destino = document.body;
         this.eltitulo = eltitulo;
         this.texto = texto;
+
+        // Criar fundo escurecido
         this.divmsg = document.createElement("div");
         const estilo_divmsg = `
-           display:flex;
-           justify-content:center;
-           align-items: center;
-           position:absolute;
-           top:0px;
-           left:0px;
-           width:100%;
-           height:100vh;
-           background-color:rgba(0,0,0,0.7)
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            position:fixed;
+            top:0;
+            left:0;
+            width:100vw;
+            height:100vh;
+            background-color:rgba(0,0,0,0.7);
+            z-index:9999;
         `;
-        this.divmsg.setAttribute("class", "div");
         this.divmsg.setAttribute("style", estilo_divmsg);
-        this.destino.prepend(this.divmsg);
+        this.destino.appendChild(this.divmsg);
 
+        // Criar caixa da mensagem
         const areacaixamsg = document.createElement("div");
         const estilo_caixamsg = `
-        display: flex;
-        flex-direction: column;
-        background-color:#d3dbe1;
-        justify-content: space-between;
-        align-items: center;
-        border: 1px solid black;
-        width: 15vw;
-        height: 100px;
+            display: flex;
+            flex-direction: column;
+            background-color: #d3dbe1;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid black;
+            width: 300px;
+            min-height: 150px;
+            border-radius: 8px;
+            overflow: hidden;
         `;
-        areacaixamsg.setAttribute("id", "areaCaixa");
         areacaixamsg.setAttribute("style", estilo_caixamsg);
-        this.divmsg.prepend(areacaixamsg);
+        this.divmsg.appendChild(areacaixamsg);
 
+        // Título
         const msgtitulo = document.createElement("div");
-        msgtitulo.innerText = `${this.eltitulo}`;
-        const estiloTitulo = `
-        background-color:${this.cor};
-        width: 100%;
-        text-align: center;
-        `;
-        msgtitulo.setAttribute("class", "titulo");
-        msgtitulo.setAttribute("style", estiloTitulo);
-        areacaixamsg.prepend(msgtitulo);
+        msgtitulo.innerText = this.eltitulo;
+        msgtitulo.setAttribute("style", `
+            background-color: ${this.cor};
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            padding: 10px;
+        `);
+        areacaixamsg.appendChild(msgtitulo);
 
+        // Texto principal
         const areatexto = document.createElement("div");
-        areatexto.innerHTML = `${this.texto}`;
-        areatexto.setAttribute('class', 'texto');
-        const estiloTexto = `
-        background-color: #fff;
-        text-align: center;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        `;
-        areatexto.setAttribute('style', estiloTexto);
-        areacaixamsg.append(areatexto);
+        areatexto.innerHTML = this.texto;
+        areatexto.setAttribute("style", `
+            background-color: #fff;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            flex: 1;
+        `);
+        areacaixamsg.appendChild(areatexto);
 
+        // Rodapé com botões
+        const rodape = document.createElement("div");
+        rodape.setAttribute("style", `
+            background-color: ${this.cor};
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
+        `);
+        areacaixamsg.appendChild(rodape);
 
-        const rodaPe = document.createElement("div");
-        rodaPe.setAttribute("class","rodape")
-        const estiloRodape=`
-        background-color:${this.cor};
-        text-align: center;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content:space-around ;
-        align-items: center;
-        `
-        rodaPe.setAttribute("style",estiloRodape)
-        areacaixamsg.appendChild(rodaPe)
-        if(this.tipo == "ok"){
-        const buton_ok = document.createElement("button");
-        buton_ok.setAttribute("class", "but");
-        const butonEstilo = `
-        padding:3px;
-        background-color: #0e65fb;
-        width:100px;
-        flex-direction:row: 
-        border-radius: 5px;
-        `;
-        buton_ok.setAttribute("style", butonEstilo);
-        buton_ok.innerHTML = 'ok';
-        
-      
-        buton_ok.addEventListener('click', () => {
-            this.ocultar();
-        });
-         rodaPe.append(buton_ok);
-        }
-        else if (this.tipo =="sn"){
-            const buton_sim = document.createElement("button");
-            buton_sim.setAttribute("class", "but");
-            const butonEstilo = `
-                padding:3px;
+        if (this.tipo === "ok") {
+            const btn_ok = document.createElement("button");
+            btn_ok.innerText = "OK";
+            btn_ok.setAttribute("style", `
+                padding: 8px 16px;
                 background-color: #0e65fb;
-                border: 1px solid #0e65fb;
-                width:80px;
+                color: white;
+                border: none;
                 border-radius: 5px;
-        `;
-            buton_sim.setAttribute("style", butonEstilo);
-            buton_sim.innerHTML = this.textos[0];
-      
-            buton_sim.addEventListener('click', () => {
-             this.comando_sn()
-            this.ocultar();
-        });
-           rodaPe.append(buton_sim);
-
-            const buton_nao = document.createElement("button");
-            buton_nao.setAttribute("class","but")
-            buton_nao.setAttribute("style", butonEstilo)
-            buton_nao.innerHTML=this.textos[1];
-            buton_nao.addEventListener('click', () => {
+                cursor: pointer;
+            `);
+            btn_ok.addEventListener("click", () => this.ocultar());
+            rodape.appendChild(btn_ok);
+        } else if (this.tipo === "sn") {
+            const btn_sim = document.createElement("button");
+            btn_sim.innerText = this.textos[0];
+            btn_sim.setAttribute("style", `
+                padding: 8px 16px;
+                background-color: #0e65fb;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            `);
+            btn_sim.addEventListener("click", () => {
+                this.comando_sn();
                 this.ocultar();
             });
-            rodaPe.append(buton_nao)
+
+            const btn_nao = document.createElement("button");
+            btn_nao.innerText = this.textos[1];
+            btn_nao.setAttribute("style", `
+                padding: 8px 16px;
+                background-color: #ccc;
+                color: black;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            `);
+            btn_nao.addEventListener("click", () => this.ocultar());
+
+            rodape.appendChild(btn_sim);
+            rodape.appendChild(btn_nao);
         }
-    } 
+    }
 
     static ocultar = () => {
-        this.divmsg.remove();
+        if (this.divmsg) {
+            this.divmsg.remove();
+        }
     }
 }
 
 export { Cxmsg };
+
